@@ -30,13 +30,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     const getBigPhotos = () => {
-        if (window.matchMedia('(max-width: 767px)').matches) {
-            document.querySelectorAll('img').forEach(image => {
-                image.style.width = '100%'
-                image.style.position = 'static'
-            });
-        }
-
         if (window.matchMedia('(min-width: 768px)').matches) {
             container.gridify({
                 srcNode: 'img',             // grid items (class, node)
