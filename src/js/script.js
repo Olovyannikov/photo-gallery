@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     images.forEach(image => {
         container.innerHTML += `
-        <article class="col-lg-3 col-md-4 col-6 thumb">
+        <article class="col-lg-3 col-md-4 col-12 thumb">
                 <a data-fancybox="gallery" href=${image}>
                     <img class="img-fluid" src=${image}>
                 </a>
@@ -32,13 +32,16 @@ window.addEventListener('DOMContentLoaded', () => {
         `
     });
 
-    container.gridify({
-        srcNode: 'img',             // grid items (class, node)
-        margin: '20px',             // margin in pixel, default: 0px
-        width: '300px',             // grid item width in pixel, default: 220px
-        max_width: '',              // dynamic gird item width if specified, (pixel)
-        resizable: true,            // re-layout if window resize
-        transition: 'all 0.5s ease' // support transition for CSS3, default: all 0.5s ease
+    window.addEventListener('resize', () => {
+        if (window.matchMedia('(min-width: 768px)').matches) {
+            container.gridify({
+                srcNode: 'img',             // grid items (class, node)
+                margin: '20px',             // margin in pixel, default: 0px
+                width: '300px',             // grid item width in pixel, default: 220px
+                max_width: '',              // dynamic gird item width if specified, (pixel)
+                resizable: true,            // re-layout if window resize
+                transition: 'all 0.5s ease' // support transition for CSS3, default: all 0.5s ease
+            })
+        }
     })
-
 });

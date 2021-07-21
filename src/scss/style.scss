@@ -1,5 +1,10 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+h1 {
+  text-align: center;
+  padding-top: 20px;
+}
+
 
 .thumb img {
   -webkit-filter: grayscale(0);
@@ -8,11 +13,6 @@
   background-color: #fff;
   border: 1px solid #ddd;
   padding: 5px;
-}
-
-.thumb img:hover {
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
 }
 
 .thumb {
