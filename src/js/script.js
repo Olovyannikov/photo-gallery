@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
         `
     });
 
-    window.addEventListener('resize', () => {
+    const getBigPhotos = () => {
         if (window.matchMedia('(min-width: 768px)').matches) {
             container.gridify({
                 srcNode: 'img',             // grid items (class, node)
@@ -43,5 +43,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 transition: 'all 0.5s ease' // support transition for CSS3, default: all 0.5s ease
             })
         }
-    })
+    }
+
+    getBigPhotos();
+
+    window.addEventListener('resize', getBigPhotos)
 });
